@@ -1,0 +1,98 @@
+{
+    "extension_name": {
+        "message": "Estrai Kanji",
+        "description": "The display name for the Safari extension."
+    },
+    "extension_description": {
+        "message": "Estrae termini kanji (2+ ideogrammi CJK) dalla pagina web corrente e li salva in un file di testo.",
+        "description": "A short description of what the extension does."
+    },
+    "extract_button": {
+        "message": "Estrai",
+        "description": "Button title to start extraction."
+    },
+    "download_button": {
+        "message": "Scarica .txt",
+        "description": "Button title to download the extracted results."
+    },
+    "unique_terms_label": {
+        "message": "Termini unici",
+        "description": "Label for the number of unique extracted kanji terms."
+    },
+    "total_occurrences_label": {
+        "message": "Occorrenze totali",
+        "description": "Label for total extracted occurrences including duplicates."
+    },
+    "no_active_tab": {
+        "message": "Nessuna scheda attiva.",
+        "description": "Error shown when Safari does not provide an active tab."
+    },
+    "restricted_page": {
+        "message": "Questa pagina non puo essere analizzata dalle estensioni.",
+        "description": "Error shown for pages where extension scripts cannot run."
+    },
+    "extracting": {
+        "message": "Estrazione in corso...",
+        "description": "Status shown while extraction is running."
+    },
+    "extraction_no_data": {
+        "message": "L'estrazione non ha restituito dati.",
+        "description": "Error shown when the page script returns no result."
+    },
+    "no_terms_found": {
+        "message": "Nessun termine kanji (2+ caratteri) trovato in questa pagina.",
+        "description": "Status shown when extraction finds no matching terms."
+    },
+    "found_unique_terms": {
+        "message": "Trovati $1 termini unici.",
+        "description": "Status shown after successful extraction. $1 is the number of unique terms."
+    },
+    "extraction_failed": {
+        "message": "Estrazione non riuscita: $1",
+        "description": "Error shown when extraction fails. $1 is the error message."
+    },
+    "no_active_tab_download": {
+        "message": "Nessuna scheda attiva per il download.",
+        "description": "Error shown when no active tab is available for downloading."
+    },
+    "downloaded_file": {
+        "message": "Scaricato $1",
+        "description": "Status shown after download starts. $1 is the file name."
+    },
+    "download_failed": {
+        "message": "Download non riuscito: $1",
+        "description": "Error shown when download fails. $1 is the error message."
+    },
+    "char_count": {
+        "message": "$1 caratteri",
+        "description": "Character count for one extracted term. $1 is the number of characters."
+    },
+    "file_source": {
+        "message": "Fonte: $1",
+        "description": "Source URL line in the downloaded text file. $1 is the URL."
+    },
+    "file_extracted": {
+        "message": "Estratto: $1",
+        "description": "Timestamp line in the downloaded text file. $1 is the ISO timestamp."
+    },
+    "file_unique_terms": {
+        "message": "Termini kanji unici (2+ caratteri): $1",
+        "description": "Unique term count line in the downloaded text file. $1 is the count."
+    },
+    "file_total_occurrences": {
+        "message": "Occorrenze totali (con duplicati): $1",
+        "description": "Total occurrence count line in the downloaded text file. $1 is the count."
+    },
+    "share_button": {
+        "message": "Condividi .txt",
+        "description": "Button title on iOS to share the extracted results as a file."
+    },
+    "shared_file": {
+        "message": "Condiviso $1",
+        "description": "Status shown after the share sheet is presented. $1 is the file name."
+    },
+    "share_failed": {
+        "message": "Condivisione non riuscita: $1",
+        "description": "Error shown when sharing fails. $1 is the error message."
+    }
+}

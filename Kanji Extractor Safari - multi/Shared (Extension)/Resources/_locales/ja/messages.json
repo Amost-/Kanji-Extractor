@@ -1,0 +1,98 @@
+{
+    "extension_name": {
+        "message": "漢字抽出",
+        "description": "The display name for the Safari extension."
+    },
+    "extension_description": {
+        "message": "現在のWebページから2文字以上のCJK漢字を含む語句を抽出し、結果をテキストファイルとして保存します。",
+        "description": "A short description of what the extension does."
+    },
+    "extract_button": {
+        "message": "抽出",
+        "description": "Button title to start extraction."
+    },
+    "download_button": {
+        "message": ".ダウンロード",
+        "description": "Button title to download the extracted results."
+    },
+    "unique_terms_label": {
+        "message": "一意の語句",
+        "description": "Label for the number of unique extracted kanji terms."
+    },
+    "total_occurrences_label": {
+        "message": "総出現数",
+        "description": "Label for total extracted occurrences including duplicates."
+    },
+    "no_active_tab": {
+        "message": "アクティブなタブがありません。",
+        "description": "Error shown when Safari does not provide an active tab."
+    },
+    "restricted_page": {
+        "message": "このページは拡張機能でスキャンできません。",
+        "description": "Error shown for pages where extension scripts cannot run."
+    },
+    "extracting": {
+        "message": "抽出中...",
+        "description": "Status shown while extraction is running."
+    },
+    "extraction_no_data": {
+        "message": "抽出結果がありません。",
+        "description": "Error shown when the page script returns no result."
+    },
+    "no_terms_found": {
+        "message": "このページには漢字語句（2文字以上）が見つかりませんでした。",
+        "description": "Status shown when extraction finds no matching terms."
+    },
+    "found_unique_terms": {
+        "message": "$1件の一意の語句が見つかりました。",
+        "description": "Status shown after successful extraction. $1 is the number of unique terms."
+    },
+    "extraction_failed": {
+        "message": "抽出に失敗しました: $1",
+        "description": "Error shown when extraction fails. $1 is the error message."
+    },
+    "no_active_tab_download": {
+        "message": "ダウンロードに使用できるアクティブなタブがありません。",
+        "description": "Error shown when no active tab is available for downloading."
+    },
+    "downloaded_file": {
+        "message": "$1をダウンロードしました",
+        "description": "Status shown after download starts. $1 is the file name."
+    },
+    "download_failed": {
+        "message": "ダウンロードに失敗しました: $1",
+        "description": "Error shown when download fails. $1 is the error message."
+    },
+    "char_count": {
+        "message": "$1文字",
+        "description": "Character count for one extracted term. $1 is the number of characters."
+    },
+    "file_source": {
+        "message": "ソース: $1",
+        "description": "Source URL line in the downloaded text file. $1 is the URL."
+    },
+    "file_extracted": {
+        "message": "抽出日時: $1",
+        "description": "Timestamp line in the downloaded text file. $1 is the ISO timestamp."
+    },
+    "file_unique_terms": {
+        "message": "一意の漢字語句（2文字以上）: $1",
+        "description": "Unique term count line in the downloaded text file. $1 is the count."
+    },
+    "file_total_occurrences": {
+        "message": "総出現数（重複を含む）: $1",
+        "description": "Total occurrence count line in the downloaded text file. $1 is the count."
+    },
+    "share_button": {
+        "message": ".txt を共有",
+        "description": "Button title on iOS to share the extracted results as a file."
+    },
+    "shared_file": {
+        "message": "$1 を共有しました",
+        "description": "Status shown after the share sheet is presented. $1 is the file name."
+    },
+    "share_failed": {
+        "message": "共有に失敗しました: $1",
+        "description": "Error shown when sharing fails. $1 is the error message."
+    }
+}

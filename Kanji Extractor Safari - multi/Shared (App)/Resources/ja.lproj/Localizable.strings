@@ -1,0 +1,7 @@
+"Kanji Extractor" = "漢字抽出";
+"Enable the extension in Safari to extract kanji terms from any web page." = "Safariで拡張機能を有効にすると、任意のWebページから漢字語句を抽出できます。";
+"Open Safari Extensions Preferences" = "Safari拡張機能の設定を開く";
+"Enable the extension in Settings → Apps → Safari → Extensions.\nIn Safari tap the puzzle-piece button while viewing a web page." = "設定 → アプリ → Safari → 機能拡張で拡張機能を有効にし、Webページを表示中にSafariのパズルピースボタンをタップしてください。";
+"Open Settings" = "設定を開く";
+"Privacy Policy" = "プライバシーポリシー";
+"Kanji Extractor processes the current web page locally in Safari only after you click Extract. \nIt does not collect, store, track, sell, or upload your browsing data, extracted text, or downloaded files." = "漢字抽出は、「抽出」をクリックした後にのみ、現在のWebページをSafari内でローカルに処理します。閲覧データ、抽出されたテキスト、ダウンロードしたファイルを収集、保存、追跡、販売、アップロードすることはありません。";

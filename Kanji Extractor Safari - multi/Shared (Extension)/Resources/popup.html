@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title data-i18n="extension_name">Kanji Extractor</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1 data-i18n="extension_name">Kanji Extractor</h1>
+    <p id="source" class="source" title=""></p>
+  </header>
+
+  <div class="actions">
+    <button id="extractBtn" class="primary" data-i18n="extract_button">Extract</button>
+    <button id="downloadBtn" data-i18n="download_button" disabled>Download .txt</button>
+  </div>
+
+  <div id="status" class="status" hidden></div>
+
+  <section id="stats" class="stats" hidden>
+    <div class="tile">
+      <span class="tile-label" data-i18n="unique_terms_label">Unique terms</span>
+      <span class="tile-value" id="uniqueCount">0</span>
+    </div>
+    <div class="tile">
+      <span class="tile-label" data-i18n="total_occurrences_label">Total occurrences</span>
+      <span class="tile-value" id="totalCount">0</span>
+    </div>
+  </section>
+
+  <ol id="results" class="results"></ol>
+
+  <script src="popup.js"></script>
+</body>
+</html>
