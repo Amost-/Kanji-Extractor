@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kanji Extractor</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>Kanji Extractor</h1>
+    <p id="source" class="source" title=""></p>
+  </header>
+
+  <div class="actions">
+    <button id="extractBtn" class="primary">Extract</button>
+    <button id="downloadBtn" disabled>Download .txt</button>
+  </div>
+
+  <div id="status" class="status" hidden></div>
+
+  <section id="stats" class="stats" hidden>
+    <div class="tile">
+      <span class="tile-label">Unique words</span>
+      <span class="tile-value" id="uniqueCount">0</span>
+    </div>
+    <div class="tile">
+      <span class="tile-label">Total occurrences</span>
+      <span class="tile-value" id="totalCount">0</span>
+    </div>
+  </section>
+
+  <ol id="results" class="results"></ol>
+
+  <script src="popup.js"></script>
+</body>
+</html>
