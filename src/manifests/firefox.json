@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_extension_name__",
+  "version": "1.5",
+  "description": "__MSG_extension_description__",
+  "default_locale": "en",
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "kanji-extractor@tomas.it",
+      "strict_min_version": "115.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
+
+  "icons": {
+    "48":  "icons/icon-48.png",
+    "96":  "icons/icon-96.png",
+    "128": "icons/icon-128.png"
+  },
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "__MSG_extension_name__",
+    "default_icon": {
+      "48": "icons/icon-48.png",
+      "96": "icons/icon-96.png"
+    }
+  },
+
+  "background": {
+    "scripts": ["sync-core.js", "sync-coordinator.js", "background.js"]
+  },
+
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "downloads",
+    "storage"
+  ]
+}

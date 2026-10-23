@@ -1,0 +1,325 @@
+{
+    "extension_name": {
+        "message": "Estrai Kanji",
+        "description": "The display name for the extension."
+    },
+    "extension_description": {
+        "message": "Estrae termini kanji (2+ ideogrammi CJK) dalla pagina web corrente e li salva in un file di testo.",
+        "description": "A short description of what the extension does."
+    },
+    "extract_button": {
+        "message": "Estrai",
+        "description": "Button title to start extraction."
+    },
+    "download_button": {
+        "message": "Scarica .txt",
+        "description": "Button title to download the extracted results."
+    },
+    "share_button": {
+        "message": "Condividi .txt",
+        "description": "Button title on iOS to share the extracted results as a file."
+    },
+    "mode_label": {
+        "message": "Modalità",
+        "description": "Label for the extraction mode selector."
+    },
+    "mode_kanji_words": {
+        "message": "Parole kanji",
+        "description": "Extraction mode: whole words made only of kanji (2+ chars)."
+    },
+    "mode_all_words": {
+        "message": "Tutte le parole",
+        "description": "Extraction mode: any word containing at least one kanji."
+    },
+    "mode_changed": {
+        "message": "Modalità cambiata — premi Estrai per applicare.",
+        "description": "Hint shown after changing the extraction mode."
+    },
+    "fallback_runs_note": {
+        "message": " (segmentatore non disponibile — sequenze kanji)",
+        "description": "Appended to the status when Intl.Segmenter is unavailable and the kanji-run fallback is used."
+    },
+    "new_only_label": {
+        "message": "Solo termini nuovi",
+        "description": "Label for the toggle that exports only terms not seen in previous scans."
+    },
+    "sync_label": {
+        "message": "Sincronizza tra dispositivi",
+        "description": "Label for the toggle that enables cross-device sync (iCloud on Safari)."
+    },
+    "sync_failed": {
+        "message": "Sincronizzazione non riuscita: $1",
+        "description": "Error shown when a sync attempt fails. $1 is the error message."
+    },
+    "sync_err_account": {
+        "message": "Accedi a iCloud per sincronizzare.",
+        "description": "Sync error: the device is not signed in to iCloud."
+    },
+    "sync_err_account_temporary": {
+        "message": "iCloud non è disponibile al momento. Controlla l'Account Apple nelle Impostazioni: la sincronizzazione riproverà da sola.",
+        "description": "Sync error: iCloud account is transiently unavailable; unlike sync_err_account this recovers on its own."
+    },
+    "sync_err_schema": {
+        "message": "Schema CloudKit non ancora pubblicato in Production.",
+        "description": "Sync error: the CloudKit record type is missing from the Production schema."
+    },
+    "sync_err_network": {
+        "message": "Rete non disponibile — riprova più tardi.",
+        "description": "Sync error: no network / CloudKit temporarily unavailable."
+    },
+    "sync_err_quota": {
+        "message": "Spazio iCloud esaurito.",
+        "description": "Sync error: the user's iCloud quota is exceeded."
+    },
+    "sync_err_reset": {
+        "message": "I dati di sincronizzazione sono stati reimpostati su iCloud — verranno risincronizzati al prossimo tentativo.",
+        "description": "Sync error: the iCloud zone or change token was reset; a retry re-syncs."
+    },
+    "sync_err_zone_deleted": {
+        "message": "I dati di sincronizzazione sono stati eliminati da iCloud nelle Impostazioni. La cronologia su questo dispositivo è intatta: riattiva la sincronizzazione per ricaricarla.",
+        "description": "Sync error: the user deleted the app's iCloud data in Settings; sync stays off until the user re-enables it."
+    },
+    "sync_failed_generic": {
+        "message": "Sincronizzazione non riuscita — riprova più tardi.",
+        "description": "Generic sync failure shown when there is no user-facing detail."
+    },
+    "unique_terms_label": {
+        "message": "Termini unici",
+        "description": "Label for the number of unique extracted kanji terms shown."
+    },
+    "total_occurrences_label": {
+        "message": "Occorrenze totali",
+        "description": "Label for total extracted occurrences including duplicates."
+    },
+    "export_button": {
+        "message": "Esporta",
+        "description": "Button to export the known-terms history as JSON."
+    },
+    "import_button": {
+        "message": "Importa",
+        "description": "Button to import a previously exported known-terms history."
+    },
+    "clear_button": {
+        "message": "Cancella",
+        "description": "Button to clear the known-terms history."
+    },
+    "known_count": {
+        "message": "$1 termini noti",
+        "description": "Footer count of terms stored in history. $1 is the number."
+    },
+    "no_active_tab": {
+        "message": "Nessuna scheda attiva.",
+        "description": "Error shown when there is no active tab."
+    },
+    "restricted_page": {
+        "message": "Questa pagina non può essere analizzata dalle estensioni.",
+        "description": "Error shown for pages where extension scripts cannot run."
+    },
+    "extracting": {
+        "message": "Estrazione in corso...",
+        "description": "Status shown while extraction is running."
+    },
+    "extraction_no_data": {
+        "message": "L'estrazione non ha restituito dati.",
+        "description": "Error shown when the page script returns no result."
+    },
+    "no_terms_found": {
+        "message": "Nessun termine kanji (2+ caratteri) trovato in questa pagina.",
+        "description": "Status shown when extraction finds no matching terms."
+    },
+    "found_unique_terms": {
+        "message": "Trovati $1 termini unici.",
+        "description": "Status after extraction in normal mode. $1 is the number of unique terms."
+    },
+    "found_new_terms": {
+        "message": "Trovati $count$ nuovi termini.",
+        "description": "Status in new-only mode. Counts only terms absent from history.",
+        "placeholders": { "count": { "content": "$1", "example": "73" } }
+    },
+    "found_new_term": {
+        "message": "Trovato $count$ nuovo termine.",
+        "description": "Singular status in new-only mode.",
+        "placeholders": { "count": { "content": "$1", "example": "1" } }
+    },
+    "extraction_failed": {
+        "message": "Estrazione non riuscita: $1",
+        "description": "Error shown when extraction fails. $1 is the error message."
+    },
+    "no_active_tab_download": {
+        "message": "Nessuna scheda attiva per il download.",
+        "description": "Error shown when no active tab is available for downloading."
+    },
+    "saved_added": {
+        "message": "Download avviato: $1 — aggiunti $2 termini alla cronologia."
+    },
+    "saved_downloads_added": {
+        "message": "Salvato in Download: $1 — aggiunti $2 termini alla cronologia.",
+        "description": "Status shown after the file was written to the Downloads folder and its terms were added to history. $1 is the file name, $2 is the number of terms added."
+    },
+    "download_failed": {
+        "message": "Download non riuscito: $1",
+        "description": "Error shown when download fails. $1 is the error message."
+    },
+    "shared_file": {
+        "message": "Condiviso $1",
+        "description": "Status shown after the share sheet is presented. $1 is the file name."
+    },
+    "share_failed": {
+        "message": "Condivisione non riuscita: $1",
+        "description": "Error shown when sharing fails. $1 is the error message."
+    },
+    "web_share_unavailable": {
+        "message": "La condivisione Web non è disponibile su questo dispositivo.",
+        "description": "Error shown when the Web Share API cannot be used."
+    },
+    "confirm_clear": {
+        "message": "Cancellare tutta la cronologia dei termini noti?",
+        "description": "Confirmation prompt before clearing history."
+    },
+    "history_cleared": {
+        "message": "Cronologia dei termini noti cancellata.",
+        "description": "Status shown after clearing history."
+    },
+    "history_exported": {
+        "message": "Esportazione richiesta: $1"
+    },
+    "import_done": {
+        "message": "Importati $1 termini nuovi.",
+        "description": "Status shown after importing history. $1 is the number of new terms added."
+    },
+    "import_failed": {
+        "message": "Importazione non riuscita: $1",
+        "description": "Error shown when import fails. $1 is the error message."
+    },
+    "import_bad_file": {
+        "message": "File della cronologia non valido.",
+        "description": "Error shown when the imported file is not a valid history export."
+    },
+    "freq_count": {
+        "message": "$1×",
+        "description": "Occurrence count badge for one term. $1 is the number of occurrences."
+    },
+    "more_terms": {
+        "message": "+ $1 in più (nel file salvato)",
+        "description": "Shown when the results list is capped; $1 = extra terms present only in the saved file."
+    },
+    "char_count": {
+        "message": "$1 caratteri",
+        "description": "Character count for one extracted term. $1 is the number of characters."
+    },
+    "file_source": {
+        "message": "Fonte: $1",
+        "description": "Source URL line in the downloaded text file. $1 is the URL."
+    },
+    "file_extracted": {
+        "message": "Estratto: $1",
+        "description": "Timestamp line in the downloaded text file. $1 is the ISO timestamp."
+    },
+    "file_unique_terms": {
+        "message": "Termini kanji unici (2+ caratteri): $1",
+        "description": "Unique term count line in the downloaded text file. $1 is the count."
+    },
+    "file_new_terms": {
+        "message": "Termini kanji nuovi (mai visti prima): $1",
+        "description": "New-term count line in the downloaded text file. $1 is the count."
+    },
+    "file_total_occurrences": {
+        "message": "Occorrenze totali (con duplicati): $1",
+        "description": "Total occurrence count line in the downloaded text file. $1 is the count."
+    },
+    "background_unavailable": {
+        "message": "L’estensione non ha risposto. Riprova."
+    },
+    "history_clearing": {
+        "message": "Cancellazione in corso… in attesa della conferma di iCloud."
+    },
+    "sync_paused": {
+        "message": "Sincronizzazione disattivata."
+    },
+    "sync_receiving": {
+        "message": "Ricezione da iCloud — pagine completate: $1"
+    },
+    "sync_sending": {
+        "message": "Invio a iCloud — termini confermati: $1"
+    },
+    "sync_waiting": {
+        "message": "In attesa di riprendere la sincronizzazione."
+    },
+    "sync_complete": {
+        "message": "Sincronizzazione completata. Nessun termine in attesa di invio."
+    },
+    "sync_not_completed": {
+        "message": "Nessuna sincronizzazione ancora completata."
+    },
+    "sync_pending": {
+        "message": "$1 termini in attesa di invio"
+    },
+    "sync_last_completed": {
+        "message": "Ultima sincronizzazione completata: $1"
+    },
+    "sync_next_attempt": {
+        "message": "Prossimo tentativo a partire da: $1"
+    },
+    "sync_retry": {
+        "message": "Riprova"
+    },
+    "sync_keep_history_resync": {
+        "message": "Mantieni cronologia e risincronizza"
+    },
+    "sync_history_resync_started": {
+        "message": "Cronologia locale mantenuta. Risincronizzazione avviata."
+    },
+    "sync_err_not_stale": {
+        "message": "Non è disponibile una generazione recuperabile. Aggiorna lo stato della sincronizzazione e riprova."
+    },
+    "history_save_failed": {
+        "message": "Richiesta del file accettata, ma salvataggio della cronologia non confermato: $1"
+    },
+    "sync_err_stale_history": {
+        "message": "Sincronizzazione sospesa: la cronologia locale non corrisponde allo stato di cancellazione di iCloud. Esporta la cronologia prima di scegliere come recuperarla."
+    },
+    "history_err_format": {
+        "message": "Il formato della cronologia salvata non è supportato o è danneggiato. Nessuna modifica è stata fatta. Aggiorna l’estensione oppure usa Cancella cronologia per mettere da parte i dati danneggiati e ricominciare."
+    },
+    "sync_err_journal": {
+        "message": "Il registro di sincronizzazione su questo dispositivo è danneggiato. Esporta la cronologia, poi cancellala per ricostruire la sincronizzazione."
+    },
+    "sync_err_protocol": {
+        "message": "L’estensione ha ricevuto una risposta di sincronizzazione non valida. Aggiorna l’estensione e riprova."
+    },
+    "history_clear_stuck_hint": {
+        "message": "Disattiva la sincronizzazione per conservare la cronologia locale, oppure usa Cancella cronologia per riprovare."
+    },
+    "history_paused_saved": {
+        "message": "File pronto: $1. La cronologia non viene aggiornata finché è in corso la cancellazione su iCloud.",
+        "description": "Status shown when a file was saved during a pending iCloud history deletion, so its terms were not added to history. $1 is the file name."
+    },
+    "clear_abandon_pending": {
+        "message": "Annullamento della cancellazione su iCloud in corso… riprova tra poco.",
+        "description": "Shown when Clear history is pressed while turning sync off is still cancelling a pending iCloud deletion."
+    },
+    "storage_err_quota": {
+        "message": "Lo spazio di archiviazione dell’estensione è pieno. Esporta la cronologia, poi cancellala o libera spazio.",
+        "description": "Shown when the browser refuses to save the history because the extension's storage quota is full."
+    },
+    "storage_err_generic": {
+        "message": "Impossibile accedere allo spazio di archiviazione del browser: $1",
+        "description": "Shown when reading or writing the extension's browser storage fails for another reason. $1 is a short technical detail from the browser."
+    },
+    "saved_added_one": {
+        "message": "Download avviato: $1 — aggiunto $2 termine alla cronologia.",
+        "description": "Status after a download adds exactly one term. $1 is the file name, $2 is one."
+    },
+    "import_done_one": {
+        "message": "Importato $1 nuovo termine.",
+        "description": "Status after an import adds exactly one term. $1 is one."
+    },
+    "partial_scan_note": {
+        "message": " (pagina analizzata solo in parte; riprova su una pagina più piccola)",
+        "description": "Appended when the page scan stops at its time budget."
+    },
+    "saved_downloads_added_one": {
+        "message": "Salvato in Download: $1 — aggiunto $2 termine alla cronologia.",
+        "description": "Status after a native save adds exactly one term. $1 is the file name, $2 is one."
+    }
+}

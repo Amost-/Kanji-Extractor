@@ -1,0 +1,325 @@
+{
+    "extension_name": {
+        "message": "Kanji Extractor",
+        "description": "The display name for the extension."
+    },
+    "extension_description": {
+        "message": "Extracts kanji terms (2+ CJK ideographs) from the current web page and saves them as a text file.",
+        "description": "A short description of what the extension does."
+    },
+    "extract_button": {
+        "message": "Extract",
+        "description": "Button title to start extraction."
+    },
+    "download_button": {
+        "message": "Download .txt",
+        "description": "Button title to download the extracted results."
+    },
+    "share_button": {
+        "message": "Share .txt",
+        "description": "Button title on iOS to share the extracted results as a file."
+    },
+    "mode_label": {
+        "message": "Mode",
+        "description": "Label for the extraction mode selector."
+    },
+    "mode_kanji_words": {
+        "message": "Kanji words",
+        "description": "Extraction mode: whole words made only of kanji (2+ chars)."
+    },
+    "mode_all_words": {
+        "message": "All words",
+        "description": "Extraction mode: any word containing at least one kanji."
+    },
+    "mode_changed": {
+        "message": "Mode changed — press Extract to apply.",
+        "description": "Hint shown after changing the extraction mode."
+    },
+    "fallback_runs_note": {
+        "message": " (segmenter unavailable — kanji runs)",
+        "description": "Appended to the status when Intl.Segmenter is unavailable and the kanji-run fallback is used."
+    },
+    "new_only_label": {
+        "message": "Only new terms",
+        "description": "Label for the toggle that exports only terms not seen in previous scans."
+    },
+    "sync_label": {
+        "message": "Sync across devices",
+        "description": "Label for the toggle that enables cross-device sync (iCloud on Safari)."
+    },
+    "sync_failed": {
+        "message": "Sync failed: $1",
+        "description": "Error shown when a sync attempt fails. $1 is the error message."
+    },
+    "sync_err_account": {
+        "message": "Sign in to iCloud to sync.",
+        "description": "Sync error: the device is not signed in to iCloud."
+    },
+    "sync_err_account_temporary": {
+        "message": "iCloud is temporarily unavailable. Check your Apple Account in Settings; sync will retry automatically.",
+        "description": "Sync error: iCloud account is transiently unavailable; unlike sync_err_account this recovers on its own."
+    },
+    "sync_err_schema": {
+        "message": "CloudKit schema not deployed to Production yet.",
+        "description": "Sync error: the CloudKit record type is missing from the Production schema."
+    },
+    "sync_err_network": {
+        "message": "Network unavailable — try again later.",
+        "description": "Sync error: no network / CloudKit temporarily unavailable."
+    },
+    "sync_err_quota": {
+        "message": "iCloud storage is full.",
+        "description": "Sync error: the user's iCloud quota is exceeded."
+    },
+    "sync_err_reset": {
+        "message": "Sync data was reset in iCloud — it will re-sync on the next attempt.",
+        "description": "Sync error: the iCloud zone or change token was reset; a retry re-syncs."
+    },
+    "sync_err_zone_deleted": {
+        "message": "Sync data was deleted from iCloud in Settings. The history on this device is intact: turn sync back on to upload it again.",
+        "description": "Sync error: the user deleted the app's iCloud data in Settings; sync stays off until the user re-enables it."
+    },
+    "sync_failed_generic": {
+        "message": "Sync failed — try again later.",
+        "description": "Generic sync failure shown when there is no user-facing detail."
+    },
+    "unique_terms_label": {
+        "message": "Unique terms",
+        "description": "Label for the number of unique extracted kanji terms shown."
+    },
+    "total_occurrences_label": {
+        "message": "Total occurrences",
+        "description": "Label for total extracted occurrences including duplicates."
+    },
+    "export_button": {
+        "message": "Export",
+        "description": "Button to export the known-terms history as JSON."
+    },
+    "import_button": {
+        "message": "Import",
+        "description": "Button to import a previously exported known-terms history."
+    },
+    "clear_button": {
+        "message": "Clear",
+        "description": "Button to clear the known-terms history."
+    },
+    "known_count": {
+        "message": "$1 terms known",
+        "description": "Footer count of terms stored in history. $1 is the number."
+    },
+    "no_active_tab": {
+        "message": "No active tab.",
+        "description": "Error shown when there is no active tab."
+    },
+    "restricted_page": {
+        "message": "This page can't be scanned by extensions.",
+        "description": "Error shown for pages where extension scripts cannot run."
+    },
+    "extracting": {
+        "message": "Extracting...",
+        "description": "Status shown while extraction is running."
+    },
+    "extraction_no_data": {
+        "message": "Extraction returned no data.",
+        "description": "Error shown when the page script returns no result."
+    },
+    "no_terms_found": {
+        "message": "No kanji terms (2+ chars) found on this page.",
+        "description": "Status shown when extraction finds no matching terms."
+    },
+    "found_unique_terms": {
+        "message": "Found $1 unique terms.",
+        "description": "Status after extraction in normal mode. $1 is the number of unique terms."
+    },
+    "found_new_terms": {
+        "message": "Found $count$ new terms.",
+        "description": "Status in new-only mode. Counts only terms absent from history.",
+        "placeholders": { "count": { "content": "$1", "example": "73" } }
+    },
+    "found_new_term": {
+        "message": "Found $count$ new term.",
+        "description": "Singular status in new-only mode.",
+        "placeholders": { "count": { "content": "$1", "example": "1" } }
+    },
+    "extraction_failed": {
+        "message": "Extraction failed: $1",
+        "description": "Error shown when extraction fails. $1 is the error message."
+    },
+    "no_active_tab_download": {
+        "message": "No active tab for download.",
+        "description": "Error shown when no active tab is available for downloading."
+    },
+    "saved_added": {
+        "message": "Download started: $1 — added $2 terms to your known list."
+    },
+    "saved_downloads_added": {
+        "message": "Saved to Downloads: $1 — added $2 terms to your known list.",
+        "description": "Status shown after the file was written to the Downloads folder and its terms were added to history. $1 is the file name, $2 is the number of terms added."
+    },
+    "download_failed": {
+        "message": "Download failed: $1",
+        "description": "Error shown when download fails. $1 is the error message."
+    },
+    "shared_file": {
+        "message": "Shared $1",
+        "description": "Status shown after the share sheet is presented. $1 is the file name."
+    },
+    "share_failed": {
+        "message": "Share failed: $1",
+        "description": "Error shown when sharing fails. $1 is the error message."
+    },
+    "web_share_unavailable": {
+        "message": "Web Share is unavailable on this device.",
+        "description": "Error shown when the Web Share API cannot be used."
+    },
+    "confirm_clear": {
+        "message": "Clear your entire known-terms history?",
+        "description": "Confirmation prompt before clearing history."
+    },
+    "history_cleared": {
+        "message": "Known-terms history cleared.",
+        "description": "Status shown after clearing history."
+    },
+    "history_exported": {
+        "message": "Export requested: $1"
+    },
+    "import_done": {
+        "message": "Imported $1 new terms.",
+        "description": "Status shown after importing history. $1 is the number of new terms added."
+    },
+    "import_failed": {
+        "message": "Import failed: $1",
+        "description": "Error shown when import fails. $1 is the error message."
+    },
+    "import_bad_file": {
+        "message": "Not a valid history file.",
+        "description": "Error shown when the imported file is not a valid history export."
+    },
+    "freq_count": {
+        "message": "$1×",
+        "description": "Occurrence count badge for one term. $1 is the number of occurrences."
+    },
+    "more_terms": {
+        "message": "+ $1 more (in the saved file)",
+        "description": "Shown when the results list is capped; $1 = extra terms present only in the saved file."
+    },
+    "char_count": {
+        "message": "$1 chars",
+        "description": "Character count for one extracted term. $1 is the number of characters."
+    },
+    "file_source": {
+        "message": "Source: $1",
+        "description": "Source URL line in the downloaded text file. $1 is the URL."
+    },
+    "file_extracted": {
+        "message": "Extracted: $1",
+        "description": "Timestamp line in the downloaded text file. $1 is the ISO timestamp."
+    },
+    "file_unique_terms": {
+        "message": "Unique kanji terms (2+ chars): $1",
+        "description": "Unique term count line in the downloaded text file. $1 is the count."
+    },
+    "file_new_terms": {
+        "message": "New kanji terms (not previously seen): $1",
+        "description": "New-term count line in the downloaded text file. $1 is the count."
+    },
+    "file_total_occurrences": {
+        "message": "Total occurrences (with duplicates): $1",
+        "description": "Total occurrence count line in the downloaded text file. $1 is the count."
+    },
+    "background_unavailable": {
+        "message": "The extension did not respond. Try again."
+    },
+    "history_clearing": {
+        "message": "Clearing history… waiting for iCloud confirmation."
+    },
+    "sync_paused": {
+        "message": "Sync is off."
+    },
+    "sync_receiving": {
+        "message": "Receiving from iCloud — pages completed: $1"
+    },
+    "sync_sending": {
+        "message": "Sending to iCloud — terms acknowledged: $1"
+    },
+    "sync_waiting": {
+        "message": "Waiting to resume sync."
+    },
+    "sync_complete": {
+        "message": "Sync completed. No terms waiting to send."
+    },
+    "sync_not_completed": {
+        "message": "No completed sync yet."
+    },
+    "sync_pending": {
+        "message": "$1 terms waiting to send"
+    },
+    "sync_last_completed": {
+        "message": "Last completed: $1"
+    },
+    "sync_next_attempt": {
+        "message": "Next attempt from: $1"
+    },
+    "sync_retry": {
+        "message": "Retry"
+    },
+    "sync_keep_history_resync": {
+        "message": "Keep history and resync"
+    },
+    "sync_history_resync_started": {
+        "message": "Local history kept. Resync started."
+    },
+    "sync_err_not_stale": {
+        "message": "No recoverable sync generation is available. Refresh the sync status and try again."
+    },
+    "history_save_failed": {
+        "message": "File request accepted, but history could not be confirmed: $1"
+    },
+    "sync_err_stale_history": {
+        "message": "Sync paused: local history and the cloud reset state do not match. Export your history before choosing how to recover it."
+    },
+    "history_err_format": {
+        "message": "The saved history format is unsupported or damaged. No changes were made. Update the extension, or use Clear history to set the damaged data aside and start over."
+    },
+    "sync_err_journal": {
+        "message": "The sync journal on this device is damaged. Export the history, then clear it to rebuild sync."
+    },
+    "sync_err_protocol": {
+        "message": "The extension received an invalid sync response. Update the extension and try again."
+    },
+    "history_clear_stuck_hint": {
+        "message": "Turn sync off to keep the local history, or use Clear history to retry."
+    },
+    "history_paused_saved": {
+        "message": "File ready: $1. History not updated while the iCloud deletion is in progress.",
+        "description": "Status shown when a file was saved during a pending iCloud history deletion, so its terms were not added to history. $1 is the file name."
+    },
+    "clear_abandon_pending": {
+        "message": "Cancelling the iCloud deletion… try again in a moment.",
+        "description": "Shown when Clear history is pressed while turning sync off is still cancelling a pending iCloud deletion."
+    },
+    "storage_err_quota": {
+        "message": "The extension's storage is full. Export your history, then clear it or free space.",
+        "description": "Shown when the browser refuses to save the history because the extension's storage quota is full."
+    },
+    "storage_err_generic": {
+        "message": "Could not access the browser storage: $1",
+        "description": "Shown when reading or writing the extension's browser storage fails for another reason. $1 is a short technical detail from the browser."
+    },
+    "saved_added_one": {
+        "message": "Download started: $1 — added $2 term to your known list.",
+        "description": "Status after a download adds exactly one term. $1 is the file name, $2 is one."
+    },
+    "import_done_one": {
+        "message": "Imported $1 new term.",
+        "description": "Status after an import adds exactly one term. $1 is one."
+    },
+    "partial_scan_note": {
+        "message": " (page scanned partially; try again on a smaller page)",
+        "description": "Appended when the page scan stops at its time budget."
+    },
+    "saved_downloads_added_one": {
+        "message": "Saved to Downloads: $1 — added $2 term to your known list.",
+        "description": "Status after a native save adds exactly one term. $1 is the file name, $2 is one."
+    }
+}

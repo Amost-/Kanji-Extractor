@@ -1,0 +1,325 @@
+{
+    "extension_name": {
+        "message": "漢字抽出",
+        "description": "The display name for the extension."
+    },
+    "extension_description": {
+        "message": "現在のWebページから2文字以上のCJK漢字を含む語句を抽出し、結果をテキストファイルとして保存します。",
+        "description": "A short description of what the extension does."
+    },
+    "extract_button": {
+        "message": "抽出",
+        "description": "Button title to start extraction."
+    },
+    "download_button": {
+        "message": ".txt をダウンロード",
+        "description": "Button title to download the extracted results."
+    },
+    "share_button": {
+        "message": ".txt を共有",
+        "description": "Button title on iOS to share the extracted results as a file."
+    },
+    "mode_label": {
+        "message": "モード",
+        "description": "Label for the extraction mode selector."
+    },
+    "mode_kanji_words": {
+        "message": "漢字の語",
+        "description": "Extraction mode: whole words made only of kanji (2+ chars)."
+    },
+    "mode_all_words": {
+        "message": "すべての語",
+        "description": "Extraction mode: any word containing at least one kanji."
+    },
+    "mode_changed": {
+        "message": "モードを変更しました。「抽出」を押して適用します。",
+        "description": "Hint shown after changing the extraction mode."
+    },
+    "fallback_runs_note": {
+        "message": "（セグメンター利用不可 — 漢字の連続）",
+        "description": "Appended to the status when Intl.Segmenter is unavailable and the kanji-run fallback is used."
+    },
+    "new_only_label": {
+        "message": "新しい語句のみ",
+        "description": "Label for the toggle that exports only terms not seen in previous scans."
+    },
+    "sync_label": {
+        "message": "デバイス間で同期",
+        "description": "Label for the toggle that enables cross-device sync (iCloud on Safari)."
+    },
+    "sync_failed": {
+        "message": "同期に失敗しました: $1",
+        "description": "Error shown when a sync attempt fails. $1 is the error message."
+    },
+    "sync_err_account": {
+        "message": "同期するには iCloud にサインインしてください。",
+        "description": "Sync error: the device is not signed in to iCloud."
+    },
+    "sync_err_account_temporary": {
+        "message": "iCloud は一時的に利用できません。設定で Apple アカウントを確認してください。同期は自動的に再試行されます。",
+        "description": "Sync error: iCloud account is transiently unavailable; unlike sync_err_account this recovers on its own."
+    },
+    "sync_err_schema": {
+        "message": "CloudKit スキーマが Production に未公開です。",
+        "description": "Sync error: the CloudKit record type is missing from the Production schema."
+    },
+    "sync_err_network": {
+        "message": "ネットワークに接続できません。",
+        "description": "Sync error: no network / CloudKit temporarily unavailable."
+    },
+    "sync_err_quota": {
+        "message": "iCloud の容量が不足しています。",
+        "description": "Sync error: the user's iCloud quota is exceeded."
+    },
+    "sync_err_reset": {
+        "message": "iCloud の同期データがリセットされました。次回の同期で再同期されます。",
+        "description": "Sync error: the iCloud zone or change token was reset; a retry re-syncs."
+    },
+    "sync_err_zone_deleted": {
+        "message": "iCloud の同期データが設定から削除されました。この端末の履歴はそのまま残っています。同期をもう一度オンにすると再アップロードされます。",
+        "description": "Sync error: the user deleted the app's iCloud data in Settings; sync stays off until the user re-enables it."
+    },
+    "sync_failed_generic": {
+        "message": "同期に失敗しました。後でもう一度お試しください。",
+        "description": "Generic sync failure shown when there is no user-facing detail."
+    },
+    "unique_terms_label": {
+        "message": "一意の語句",
+        "description": "Label for the number of unique extracted kanji terms shown."
+    },
+    "total_occurrences_label": {
+        "message": "総出現数",
+        "description": "Label for total extracted occurrences including duplicates."
+    },
+    "export_button": {
+        "message": "エクスポート",
+        "description": "Button to export the known-terms history as JSON."
+    },
+    "import_button": {
+        "message": "インポート",
+        "description": "Button to import a previously exported known-terms history."
+    },
+    "clear_button": {
+        "message": "消去",
+        "description": "Button to clear the known-terms history."
+    },
+    "known_count": {
+        "message": "既知の語句 $1 件",
+        "description": "Footer count of terms stored in history. $1 is the number."
+    },
+    "no_active_tab": {
+        "message": "アクティブなタブがありません。",
+        "description": "Error shown when there is no active tab."
+    },
+    "restricted_page": {
+        "message": "このページは拡張機能でスキャンできません。",
+        "description": "Error shown for pages where extension scripts cannot run."
+    },
+    "extracting": {
+        "message": "抽出中...",
+        "description": "Status shown while extraction is running."
+    },
+    "extraction_no_data": {
+        "message": "抽出結果がありません。",
+        "description": "Error shown when the page script returns no result."
+    },
+    "no_terms_found": {
+        "message": "このページには漢字語句（2文字以上）が見つかりませんでした。",
+        "description": "Status shown when extraction finds no matching terms."
+    },
+    "found_unique_terms": {
+        "message": "$1件の一意の語句が見つかりました。",
+        "description": "Status after extraction in normal mode. $1 is the number of unique terms."
+    },
+    "found_new_terms": {
+        "message": "$count$件の新しい語句が見つかりました。",
+        "description": "Status in new-only mode. Counts only terms absent from history.",
+        "placeholders": { "count": { "content": "$1", "example": "73" } }
+    },
+    "found_new_term": {
+        "message": "$count$件の新しい語句が見つかりました。",
+        "description": "Singular status in new-only mode.",
+        "placeholders": { "count": { "content": "$1", "example": "1" } }
+    },
+    "extraction_failed": {
+        "message": "抽出に失敗しました: $1",
+        "description": "Error shown when extraction fails. $1 is the error message."
+    },
+    "no_active_tab_download": {
+        "message": "ダウンロードに使用できるアクティブなタブがありません。",
+        "description": "Error shown when no active tab is available for downloading."
+    },
+    "saved_added": {
+        "message": "ダウンロードを開始しました: $1 — 履歴に$2語を追加しました。"
+    },
+    "saved_downloads_added": {
+        "message": "「ダウンロード」フォルダに保存しました: $1 — 履歴に$2語を追加しました。",
+        "description": "Status shown after the file was written to the Downloads folder and its terms were added to history. $1 is the file name, $2 is the number of terms added."
+    },
+    "download_failed": {
+        "message": "ダウンロードに失敗しました: $1",
+        "description": "Error shown when download fails. $1 is the error message."
+    },
+    "shared_file": {
+        "message": "$1 を共有しました",
+        "description": "Status shown after the share sheet is presented. $1 is the file name."
+    },
+    "share_failed": {
+        "message": "共有に失敗しました: $1",
+        "description": "Error shown when sharing fails. $1 is the error message."
+    },
+    "web_share_unavailable": {
+        "message": "このデバイスでは Web 共有を利用できません。",
+        "description": "Error shown when the Web Share API cannot be used."
+    },
+    "confirm_clear": {
+        "message": "既知の語句の履歴をすべて消去しますか？",
+        "description": "Confirmation prompt before clearing history."
+    },
+    "history_cleared": {
+        "message": "既知の語句の履歴を消去しました。",
+        "description": "Status shown after clearing history."
+    },
+    "history_exported": {
+        "message": "エクスポートをリクエストしました: $1"
+    },
+    "import_done": {
+        "message": "$1 件の新しい語句をインポートしました。",
+        "description": "Status shown after importing history. $1 is the number of new terms added."
+    },
+    "import_failed": {
+        "message": "インポートに失敗しました: $1",
+        "description": "Error shown when import fails. $1 is the error message."
+    },
+    "import_bad_file": {
+        "message": "有効な履歴ファイルではありません。",
+        "description": "Error shown when the imported file is not a valid history export."
+    },
+    "freq_count": {
+        "message": "$1×",
+        "description": "Occurrence count badge for one term. $1 is the number of occurrences."
+    },
+    "more_terms": {
+        "message": "他 $1 件（保存ファイルに含む）",
+        "description": "Shown when the results list is capped; $1 = extra terms present only in the saved file."
+    },
+    "char_count": {
+        "message": "$1文字",
+        "description": "Character count for one extracted term. $1 is the number of characters."
+    },
+    "file_source": {
+        "message": "ソース: $1",
+        "description": "Source URL line in the downloaded text file. $1 is the URL."
+    },
+    "file_extracted": {
+        "message": "抽出日時: $1",
+        "description": "Timestamp line in the downloaded text file. $1 is the ISO timestamp."
+    },
+    "file_unique_terms": {
+        "message": "一意の漢字語句（2文字以上）: $1",
+        "description": "Unique term count line in the downloaded text file. $1 is the count."
+    },
+    "file_new_terms": {
+        "message": "新しい漢字語句（初出）: $1",
+        "description": "New-term count line in the downloaded text file. $1 is the count."
+    },
+    "file_total_occurrences": {
+        "message": "総出現数（重複を含む）: $1",
+        "description": "Total occurrence count line in the downloaded text file. $1 is the count."
+    },
+    "background_unavailable": {
+        "message": "拡張機能から応答がありません。もう一度お試しください。"
+    },
+    "history_clearing": {
+        "message": "履歴を削除中…iCloudの確認を待っています。"
+    },
+    "sync_paused": {
+        "message": "同期はオフです。"
+    },
+    "sync_receiving": {
+        "message": "iCloudから受信中 — 完了したページ: $1"
+    },
+    "sync_sending": {
+        "message": "iCloudに送信中 — 確認済みの語数: $1"
+    },
+    "sync_waiting": {
+        "message": "同期の再開を待っています。"
+    },
+    "sync_complete": {
+        "message": "同期が完了しました。送信待ちの語はありません。"
+    },
+    "sync_not_completed": {
+        "message": "まだ同期は完了していません。"
+    },
+    "sync_pending": {
+        "message": "送信待ち: $1語"
+    },
+    "sync_last_completed": {
+        "message": "最終同期完了: $1"
+    },
+    "sync_next_attempt": {
+        "message": "次回の試行予定: $1以降"
+    },
+    "sync_retry": {
+        "message": "再試行"
+    },
+    "sync_keep_history_resync": {
+        "message": "履歴を残して再同期"
+    },
+    "sync_history_resync_started": {
+        "message": "ローカルの履歴を保持しました。再同期を開始しました。"
+    },
+    "sync_err_not_stale": {
+        "message": "復旧可能な同期世代がありません。同期状態を更新してから、もう一度お試しください。"
+    },
+    "history_save_failed": {
+        "message": "ファイルのリクエストは受け付けられましたが、履歴の保存を確認できませんでした: $1"
+    },
+    "sync_err_stale_history": {
+        "message": "同期を一時停止しました。ローカル履歴とクラウドのリセット状態が一致していません。復旧方法を選ぶ前に履歴をエクスポートしてください。"
+    },
+    "history_err_format": {
+        "message": "保存された履歴の形式が未対応か破損しています。変更は行われていません。拡張機能を更新するか、「履歴を消去」で破損したデータを退避して最初からやり直してください。"
+    },
+    "sync_err_journal": {
+        "message": "このデバイスの同期ジャーナルが破損しています。履歴を書き出してから消去すると、同期を再構築できます。"
+    },
+    "sync_err_protocol": {
+        "message": "拡張機能が無効な同期応答を受信しました。拡張機能を更新してから、もう一度お試しください。"
+    },
+    "history_clear_stuck_hint": {
+        "message": "同期をオフにするとローカルの履歴を保持できます。「履歴を消去」でやり直すこともできます。"
+    },
+    "history_paused_saved": {
+        "message": "ファイルの準備ができました: $1。iCloud の削除が進行中のため、履歴は更新されません。",
+        "description": "Status shown when a file was saved during a pending iCloud history deletion, so its terms were not added to history. $1 is the file name."
+    },
+    "clear_abandon_pending": {
+        "message": "iCloud の削除を取り消しています… しばらくしてからもう一度お試しください。",
+        "description": "Shown when Clear history is pressed while turning sync off is still cancelling a pending iCloud deletion."
+    },
+    "storage_err_quota": {
+        "message": "拡張機能の保存領域がいっぱいです。履歴を書き出してから、消去するか空き容量を確保してください。",
+        "description": "Shown when the browser refuses to save the history because the extension's storage quota is full."
+    },
+    "storage_err_generic": {
+        "message": "ブラウザの保存領域にアクセスできませんでした: $1",
+        "description": "Shown when reading or writing the extension's browser storage fails for another reason. $1 is a short technical detail from the browser."
+    },
+    "saved_added_one": {
+        "message": "ダウンロードを開始しました: $1 — 履歴に$2語を追加しました。",
+        "description": "Status after a download adds exactly one term. $1 is the file name, $2 is one."
+    },
+    "import_done_one": {
+        "message": "$1件の新しい語句をインポートしました。",
+        "description": "Status after an import adds exactly one term. $1 is one."
+    },
+    "partial_scan_note": {
+        "message": "（ページの一部のみをスキャンしました。小さいページで再試行してください）",
+        "description": "Appended when the page scan stops at its time budget."
+    },
+    "saved_downloads_added_one": {
+        "message": "「ダウンロード」フォルダに保存しました: $1 — 履歴に$2語を追加しました。",
+        "description": "Status after a native save adds exactly one term. $1 is the file name, $2 is one."
+    }
+}

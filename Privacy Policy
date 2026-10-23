@@ -1,0 +1,204 @@
+# Privacy Policy — Kanji Extractor
+
+---
+
+## English
+
+**Last updated: 24 June 2026**
+
+Kanji Extractor ("the app", "the extension") is a browser extension that helps you
+study Japanese by extracting kanji terms from the web page you are reading and
+building a personal, frequency-ranked vocabulary history.
+
+### Summary
+- The app does **not** collect, sell, share, or transmit your data to the
+  developer or to any third party.
+- All processing happens **on your device**, and only after you click **Extract**.
+- There are **no** analytics, trackers, advertising, accounts, or
+  developer-operated servers.
+
+### Data stored on your device
+To build your vocabulary history, the app stores the following **locally on your
+device** (in the browser's extension storage):
+- the extracted kanji terms;
+- an occurrence count and the first/last dates each term was seen;
+- the address (URL) of the page where a term was first seen.
+
+This information never leaves your device except through the optional iCloud sync
+described below — and the page URL is **never** included in that sync.
+
+### Optional iCloud sync (Safari only)
+On Safari (macOS and iOS) you may turn on **iCloud sync** (it is **off by
+default**). When enabled, your vocabulary history (the term, its count, and the
+first/last seen dates) is stored in **your own private iCloud database (Apple
+CloudKit)** so it can sync across your devices.
+- This data lives in **your** iCloud account. The developer **cannot access it**.
+- The page URLs are **not** synced; they remain on your device only.
+- iCloud is provided by Apple and governed by Apple's Privacy Policy
+  (https://www.apple.com/legal/privacy/).
+- Sync is available only on Safari. On Chrome and Firefox the app is **local
+  only** and never syncs.
+
+### No data collection by the developer
+The app contains no analytics, crash reporting, advertising, or third-party SDKs,
+and contacts no developer-operated server. The developer does not receive, store,
+or have access to your browsing data, the extracted text, your vocabulary history,
+or any personal information.
+
+### Permissions
+The extension requests only the access needed to read the **current** page's text
+when you click Extract. It does not run in the background across your pages, and
+it does not monitor your browsing.
+
+### Children's privacy
+The app does not collect any personal information from anyone, including children.
+
+### Data retention and deletion
+Your history stays on your device until you clear it from within the app. If
+iCloud sync is on, clearing your history also removes the synced data from your
+private iCloud database. You can additionally manage or delete iCloud data through
+your device's iCloud settings.
+
+### Changes to this policy
+If this policy changes, the updated version will be posted at this address with a
+revised "Last updated" date.
+
+### Contact
+Questions about this policy: tomas.social@gmail.com
+
+---
+
+## Italiano
+
+**Ultimo aggiornamento: 24 giugno 2026**
+
+Kanji Extractor ("l'app", "l'estensione") è un'estensione per browser che aiuta a
+studiare il giapponese estraendo i termini kanji dalla pagina web che stai
+leggendo e costruendo uno storico personale del vocabolario ordinato per
+frequenza.
+
+### In sintesi
+- L'app **non** raccoglie, vende, condivide né trasmette i tuoi dati allo
+  sviluppatore o a terze parti.
+- Tutta l'elaborazione avviene **sul tuo dispositivo**, e solo dopo che fai clic
+  su **Estrai**.
+- **Nessun** sistema di analytics, tracciamento, pubblicità, account o server
+  gestiti dallo sviluppatore.
+
+### Dati memorizzati sul tuo dispositivo
+Per costruire lo storico del vocabolario, l'app memorizza i seguenti dati
+**localmente sul tuo dispositivo** (nello storage dell'estensione del browser):
+- i termini kanji estratti;
+- un conteggio delle occorrenze e le date di prima/ultima comparsa di ogni
+  termine;
+- l'indirizzo (URL) della pagina in cui un termine è stato visto per la prima
+  volta.
+
+Queste informazioni non lasciano mai il tuo dispositivo, salvo tramite la
+sincronizzazione iCloud opzionale descritta sotto — e l'URL della pagina **non**
+è mai incluso in tale sincronizzazione.
+
+### Sincronizzazione iCloud opzionale (solo Safari)
+Su Safari (macOS e iOS) puoi attivare la **sincronizzazione iCloud** (è
+**disattivata per impostazione predefinita**). Quando è attiva, lo storico del
+vocabolario (il termine, il suo conteggio e le date di prima/ultima comparsa)
+viene memorizzato nel **tuo database iCloud privato (Apple CloudKit)** per
+sincronizzarsi tra i tuoi dispositivi.
+- Questi dati risiedono nel **tuo** account iCloud. Lo sviluppatore **non può
+  accedervi**.
+- Gli URL delle pagine **non** vengono sincronizzati; restano solo sul tuo
+  dispositivo.
+- iCloud è fornito da Apple ed è regolato dall'Informativa sulla privacy di Apple
+  (https://www.apple.com/legal/privacy/).
+- La sincronizzazione è disponibile solo su Safari. Su Chrome e Firefox l'app è
+  **solo locale** e non sincronizza mai.
+
+### Nessuna raccolta dati da parte dello sviluppatore
+L'app non contiene analytics, segnalazione di crash, pubblicità o SDK di terze
+parti e non contatta alcun server gestito dallo sviluppatore. Lo sviluppatore non
+riceve, non memorizza e non ha accesso ai tuoi dati di navigazione, al testo
+estratto, allo storico del vocabolario o a qualsiasi informazione personale.
+
+### Autorizzazioni
+L'estensione richiede solo l'accesso necessario a leggere il testo della pagina
+**corrente** quando fai clic su Estrai. Non viene eseguita in background sulle tue
+pagine e non monitora la tua navigazione.
+
+### Privacy dei minori
+L'app non raccoglie alcuna informazione personale da nessuno, minori inclusi.
+
+### Conservazione ed eliminazione dei dati
+Lo storico rimane sul tuo dispositivo finché non lo cancelli dall'app. Se la
+sincronizzazione iCloud è attiva, cancellare lo storico rimuove anche i dati
+sincronizzati dal tuo database iCloud privato. Puoi inoltre gestire o eliminare i
+dati iCloud tramite le impostazioni iCloud del tuo dispositivo.
+
+### Modifiche a questa informativa
+In caso di modifiche, la versione aggiornata sarà pubblicata a questo indirizzo
+con una nuova data di "Ultimo aggiornamento".
+
+### Contatti
+Domande su questa informativa: tomas.social@gmail.com
+
+---
+
+## 日本語
+
+**最終更新日：2026年6月24日**
+
+Kanji Extractor（以下「本アプリ」「本拡張機能」）は、閲覧中のウェブページから漢字の
+語句を抽出し、出現頻度順の個人用語彙履歴を作成して日本語学習を支援するブラウザ拡張機能
+です。
+
+### 概要
+- 本アプリは、開発者や第三者に対してあなたのデータを**収集・販売・共有・送信しません**。
+- すべての処理は、あなたが「抽出（Extract）」をクリックした後に、**お使いのデバイス上**
+  でのみ行われます。
+- アナリティクス、トラッキング、広告、アカウント、開発者が運用するサーバーは**一切あり
+  ません**。
+
+### デバイスに保存されるデータ
+語彙履歴を作成するため、本アプリは以下を**お使いのデバイス上（ブラウザの拡張機能ストレ
+ージ）にローカル保存**します。
+- 抽出された漢字の語句
+- 各語句の出現回数および初回・最終確認日
+- 語句を最初に確認したページのアドレス（URL）
+
+これらの情報は、下記の任意の iCloud 同期を除き、デバイスの外に出ることはありません。
+また、ページの URL はその同期に**一切含まれません**。
+
+### 任意の iCloud 同期（Safari のみ）
+Safari（macOS および iOS）では、**iCloud 同期**を有効にできます（**初期状態はオフ**で
+す）。有効にすると、語彙履歴（語句・出現回数・初回／最終確認日）が、複数のデバイス間で
+同期できるよう、**あなた自身のプライベート iCloud データベース（Apple CloudKit）**に
+保存されます。
+- このデータは**あなた**の iCloud アカウント内に存在します。開発者は**アクセスできません**。
+- ページの URL は同期**されず**、デバイス内にのみ残ります。
+- iCloud は Apple によって提供され、Apple のプライバシーポリシー
+  （https://www.apple.com/legal/privacy/）に従います。
+- 同期は Safari でのみ利用できます。Chrome および Firefox では本アプリは**ローカルのみ**
+  で動作し、同期は一切行いません。
+
+### 開発者によるデータ収集はありません
+本アプリには、アナリティクス、クラッシュレポート、広告、第三者の SDK は含まれておらず、
+開発者が運用するサーバーにも接続しません。開発者は、あなたの閲覧データ、抽出されたテキ
+スト、語彙履歴、その他の個人情報を受け取らず、保存せず、アクセスもできません。
+
+### 権限
+本拡張機能は、「抽出」をクリックした際に**現在**のページのテキストを読み取るために必要
+な権限のみを要求します。ページ上でバックグラウンド実行されることはなく、あなたの閲覧を
+監視することもありません。
+
+### 子どものプライバシー
+本アプリは、子どもを含むいかなる人からも個人情報を収集しません。
+
+### データの保持と削除
+履歴は、アプリ内で消去するまでデバイスに保存されます。iCloud 同期が有効な場合、履歴を
+消去すると、あなたのプライベート iCloud データベースから同期データも削除されます。さら
+に、デバイスの iCloud 設定からも iCloud データを管理・削除できます。
+
+### 本ポリシーの変更
+本ポリシーを変更する場合、更新版を本アドレスに掲載し、「最終更新日」を改訂します。
+
+### お問い合わせ
+本ポリシーに関するお問い合わせ：tomas.social@gmail.com

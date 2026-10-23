@@ -1,0 +1,9 @@
+# Public mirror ignore rules (the working repository's own .gitignore ignores
+# the Safari folder, which this repository tracks).
+.DS_Store
+__pycache__/
+xcuserdata/
+/dist/
+/tmp/
+*.zip
+out/

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Kanji Extractor — browser DOM regression checks</title>
+<style>
+  body { font: 15px system-ui; margin: 24px; }
+  pre { white-space: pre-wrap; }
+  iframe { position: absolute; left: -10000px; width: 600px; height: 400px; }
+</style>
+<h1>Browser DOM extraction checks</h1>
+<p id="status">Running…</p>
+<pre id="results"></pre>
+<script>
+// Serve with: python3 tests/serve_browser_extraction.py
+// The server supplies the actual final function from src/popup.js.
+const cases = [
+  { name: "plain compound", html: "<p>日本語</p>", expected: ["日本語"] },
+  { name: "inline compound", html: "<span>日</span><b>本</b>語", expected: ["日本語"] },
+  { name: "ruby compound", html: "<ruby>日<rt>に</rt>本<rp>(</rp><rt>ほん</rt><rp>)</rp>語</ruby>", expected: ["日本語"] },
+  { name: "ruby and okurigana", html: "<ruby>食<rt>た</rt></ruby>べる", expected: [], allWords: ["食べる"] },
+  { name: "block boundary", html: "<div>日</div><div>本</div>", expected: [], allWords: ["日", "本"] },
+  { name: "CSS block boundary", html: '<span style="display:block">日</span>本', expected: [], allWords: ["日", "本"] },
+  { name: "BR boundary", html: "日<br>本", expected: [], allWords: ["日", "本"] },
+  { name: "hidden inline boundary", html: '日<span style="display:none">秘密</span>本', expected: [], allWords: ["日", "本"] },
+  { name: "hidden body", html: "日本語<span>学校</span>", bodyStyle: "display:none", expected: [] },
+  { name: "inherited hidden body", html: "日本語<span>学校</span>", bodyStyle: "visibility:hidden", expected: [] },
+  { name: "restored descendant visibility", html: '<div style="visibility:hidden"><span style="visibility:visible">日本語</span></div>', expected: ["日本語"] },
+  { name: "collapsed table row", html: '<table><tbody><tr style="visibility:collapse"><td>秘密</td></tr></tbody></table>', expected: [] },
+  { name: "display contents", html: '日<div style="display:contents">本</div>語', expected: ["日本語"] },
+  { name: "Hangul exclusion", html: "본문으로 이동 메뉴 검색 기부 계정 만들기 로그인 日本語", expected: ["日本語"] },
+  { name: "IVS word", html: "漢&#xE0100;字", expected: ["漢字"] },
+  { name: "open shadow root", html: '<div id="shadow-host"></div>', shadowHTML: "日本語", expected: ["日本語"] },
+];
+
+async function runCase(test, engine, mode) {
+  const frame = document.createElement("iframe");
+  document.body.appendChild(frame);
+  try {
+    await new Promise((resolve, reject) => {
+      const timer = setTimeout(() => reject(new Error("Fixture load timed out")), 5000);
+      frame.onload = () => { clearTimeout(timer); resolve(); };
+      frame.srcdoc = '<!doctype html><meta charset="utf-8"><body style="' + (test.bodyStyle || "") + '">'
+        + test.html + '<script src="/extractor.js"><' + '/script></body>';
+    });
+    // Attach a real open root after srcdoc loads; static HTML cannot declare it.
+    if (test.shadowHTML) {
+      frame.contentDocument.getElementById("shadow-host").attachShadow({ mode: "open" }).innerHTML = test.shadowHTML;
+    }
+    if (engine === "runs") frame.contentWindow.Intl.Segmenter = undefined;
+    const actual = frame.contentWindow.extractKanjiInPage(mode);
+    const terms = engine === "segmenter" && mode === "all-words" && test.allWords
+      ? test.allWords : test.expected;
+    const expected = {
+      terms: terms.map((term) => ({ term, count: 1 })),
+      totalOccurrences: terms.length,
+      engine,
+    };
+    if (JSON.stringify(actual) !== JSON.stringify(expected)) {
+      throw new Error("Expected " + JSON.stringify(expected) + "; got " + JSON.stringify(actual));
+    }
+  } finally {
+    frame.remove();
+  }
+}
+
+(async () => {
+  const output = [];
+  let passed = 0;
+  let failed = 0;
+  for (const engine of ["segmenter", "runs"]) {
+    for (const mode of ["kanji-words", "all-words"]) {
+      for (const test of cases) {
+        const name = engine + " / " + mode + " / " + test.name;
+        try {
+          await runCase(test, engine, mode);
+          passed++;
+          output.push("PASS " + name);
+        } catch (error) {
+          failed++;
+          output.push("FAIL " + name + ": " + error.message);
+        }
+      }
+    }
+  }
+  document.getElementById("status").textContent = passed + " browser DOM checks passed; " + failed + " failed.";
+  document.getElementById("results").textContent = output.join("\n");
+})();
+</script>
+</html>

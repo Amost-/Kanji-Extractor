@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title data-i18n="extension_name">Kanji Extractor</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1 data-i18n="extension_name">Kanji Extractor</h1>
+    <p id="source" class="source" title=""></p>
+  </header>
+
+  <div class="actions">
+    <button id="extractBtn" class="primary" data-i18n="extract_button">Extract</button>
+    <button id="downloadBtn" data-i18n="download_button" disabled>Download .txt</button>
+  </div>
+
+  <div class="mode">
+    <span class="mode-label" data-i18n="mode_label">Mode</span>
+    <select id="modeSelect" aria-label="Extraction mode">
+      <option value="kanji-words" data-i18n="mode_kanji_words">Kanji words</option>
+      <option value="all-words" data-i18n="mode_all_words">All words</option>
+    </select>
+  </div>
+
+  <label class="toggle">
+    <input type="checkbox" id="newOnlyToggle">
+    <span data-i18n="new_only_label">Only new terms</span>
+  </label>
+
+  <div id="syncRow" class="sync" hidden>
+    <label class="toggle">
+      <input type="checkbox" id="syncToggle">
+      <span data-i18n="sync_label">Sync across devices</span>
+    </label>
+    <span id="syncStatus" class="sync-status" role="status" aria-live="polite"></span>
+    <span id="syncPending" class="sync-status"></span>
+    <span id="syncLast" class="sync-status"></span>
+    <span id="syncNext" class="sync-status"></span>
+    <button id="syncRetryBtn" class="link sync-retry" data-i18n="sync_retry">Retry</button>
+    <button id="syncAdoptBtn" class="link sync-retry" data-i18n="sync_keep_history_resync" hidden>Keep history and resync</button>
+  </div>
+
+  <div id="status" class="status" role="status" aria-live="polite" hidden></div>
+
+  <section id="stats" class="stats" hidden>
+    <div class="tile">
+      <span class="tile-label" data-i18n="unique_terms_label">Terms shown</span>
+      <span class="tile-value" id="uniqueCount">0</span>
+    </div>
+    <div class="tile">
+      <span class="tile-label" data-i18n="total_occurrences_label">Total occurrences</span>
+      <span class="tile-value" id="totalCount">0</span>
+    </div>
+  </section>
+
+  <ol id="results" class="results"></ol>
+
+  <footer class="history">
+    <span id="knownCount" class="known">0 terms known</span>
+    <div class="history-actions">
+      <button id="exportBtn" class="link" data-i18n="export_button">Export</button>
+      <button id="importBtn" class="link" data-i18n="import_button">Import</button>
+      <button id="clearBtn" class="link danger" data-i18n="clear_button">Clear</button>
+    </div>
+  </footer>
+  <input type="file" id="importInput" accept="application/json,.json" hidden>
+
+  <script src="popup.js"></script>
+</body>
+</html>

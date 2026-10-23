@@ -1,0 +1,44 @@
+{
+  "_comment": "Localized App Store screenshot captions for Kanji Extractor, one entry per scene. 'title' is the headline, 'sub' a short subline; the privacy scene uses 'bullets' instead of 'sub'. 'accent' is the scene's glow colour (RGB). Wording follows src/_locales. Nothing here may promise a feature the Safari app does not ship (iCloud sync is Safari-only and appears only in scene 4).",
+  "scenes": {
+    "1-extract": {
+      "accent": [0, 122, 255],
+      "en-US": {"title": "Kanji words from any page.", "sub": "One tap turns Japanese pages into word lists."},
+      "it": {"title": "Le parole in kanji di ogni pagina.", "sub": "Un tocco trasforma le pagine giapponesi in liste di parole."},
+      "ja": {"title": "どのページからでも、漢字語を一覧に。", "sub": "ワンタップで、日本語ページが単語リストに。"}
+    },
+    "2-frequency": {
+      "accent": [88, 86, 214],
+      "en-US": {"title": "Ranked by frequency.", "sub": "Study the words that matter most, first."},
+      "it": {"title": "In ordine di frequenza.", "sub": "Studia prima le parole che contano di più."},
+      "ja": {"title": "出現頻度の順に表示。", "sub": "よく出る語から先に学べます。"}
+    },
+    "3-new-terms": {
+      "accent": [52, 199, 89],
+      "en-US": {"title": "Only what's new to you.", "sub": "Hide the words you already know."},
+      "it": {"title": "Solo ciò che non conosci.", "sub": "Nascondi le parole che già conosci."},
+      "ja": {"title": "まだ知らない語だけを表示。", "sub": "すでに見た語は非表示にできます。"}
+    },
+    "4-sync": {
+      "accent": [10, 150, 230],
+      "en-US": {"title": "Your list on every device.", "sub": "Sync with iCloud across iPhone, iPad and Mac."},
+      "it": {"title": "La tua lista su ogni dispositivo.", "sub": "Sincronizza con iCloud su iPhone, iPad e Mac."},
+      "ja": {"title": "語彙リストを、すべてのデバイスで。", "sub": "iPhone、iPad、MacでiCloud同期。"}
+    },
+    "5-save": {
+      "accent": [255, 149, 0],
+      "en-US": {"title": "Save it as a text file.", "sub": "Export and import your history as a backup."},
+      "it": {"title": "Salvala in un file di testo.", "sub": "Esporta e importa lo storico come backup."},
+      "ja": {"title": "テキストファイルとして保存。", "sub": "履歴の書き出し・読み込みでバックアップも。"}
+    },
+    "6-privacy": {
+      "accent": [0, 122, 255],
+      "en-US": {"title": "Private by design.",
+                "bullets": ["Reads the page on your device, only when you tap Extract", "No accounts, no ads, no tracking", "Nothing is sent to the developer"]},
+      "it": {"title": "Privato per scelta.",
+             "bullets": ["Legge la pagina sul tuo dispositivo, solo quando tocchi Estrai", "Nessun account, nessuna pubblicità, nessun tracciamento", "Nulla viene inviato allo sviluppatore"]},
+      "ja": {"title": "プライバシー第一の設計。",
+             "bullets": ["ページの読み取りは端末上で、抽出をタップしたときだけ", "アカウント、広告、トラッキングなし", "開発者には何も送信されません"]}
+    }
+  }
+}

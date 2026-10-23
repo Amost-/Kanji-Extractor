@@ -1,0 +1,375 @@
+:root {
+  color-scheme: light dark;
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #666;
+  --tile-bg: rgba(0, 0, 0, 0.05);
+  --border: rgba(0, 0, 0, 0.1);
+  --accent: #007aff;
+  --accent-hover: #0a6fe0;
+  --accent-active: #005bc4;
+  --accent-fg: #ffffff;
+  --error: #d32f2f;
+  --success: #2e7d32;
+  /* Save-confirmation green: dark enough for a white label in both modes
+     (the dark-mode --success is too light for white text). */
+  --saved: #248a3d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1e1e1e;
+    --fg: #f0f0f0;
+    --muted: #a0a0a0;
+    --tile-bg: rgba(255, 255, 255, 0.07);
+    --border: rgba(255, 255, 255, 0.1);
+    --error: #ef5350;
+    --success: #66bb6a;
+  }
+}
+
+* { box-sizing: border-box; }
+
+/* The `hidden` attribute must beat class display rules. `.stats` and `.sync` set
+   `display: flex`, which (author origin) otherwise overrides the UA `[hidden]`
+   rule — leaving empty "0 / 0" stats on first open and showing the Sync row on
+   Chrome/Firefox, where sync is unavailable. */
+[hidden] { display: none !important; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-size: 13px;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+/* A fixed width on desktop: Safari, Chrome and Firefox size the popover to
+   its content, so a viewport unit here is circular (the viewport is tiny at
+   first layout and the body collapses to a narrow column). */
+body {
+  width: 380px;
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  gap: 12px;
+}
+
+/* iOS shows the popup as a sheet that already has the screen's width, so the
+   body fills it instead of overflowing 375 pt screens. The class is set by
+   popup.js from isIOS(). */
+html.ios body {
+  width: auto;
+}
+
+header h1 {
+  font-size: 15px;
+  margin: 0 0 4px 0;
+}
+
+.source {
+  margin: 0;
+  font-size: 11px;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  flex: 1;
+  padding: 7px 12px;
+  font-size: 13px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--fg);
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background: var(--tile-bg);
+}
+
+/* Pressed state — recognizable on click and on iOS tap. */
+button:active:not(:disabled) {
+  background: var(--border);
+  transform: translateY(0.5px);
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+button.primary {
+  background: var(--accent);
+  color: var(--accent-fg);
+  border-color: var(--accent);
+}
+
+/* Keep the primary button blue on hover/press. The generic button:hover above
+   has higher specificity than `button.primary`, so without re-asserting the
+   background here it repaints the button with the near-white --tile-bg while the
+   label stays white (invisible). On iOS the hover state also sticks after a tap. */
+button.primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+button.primary:active:not(:disabled) {
+  background: var(--accent-active);
+  border-color: var(--accent-active);
+}
+
+/* Save confirmation on the Download/Share button: green with a checkmark,
+   then a fade back to the normal look. The class is added and removed by
+   showSavedFeedback() in popup.js. opacity: 1 keeps the cue fully visible
+   when the button becomes disabled right after saving (new-terms-only mode
+   empties the list). */
+button.saved,
+button.saved:disabled,
+button.saved:hover:not(:disabled) {
+  opacity: 1;
+  color: #ffffff;
+  background: var(--saved);
+  border-color: var(--saved);
+  animation: saved-pulse 1.6s ease-out forwards;
+}
+
+/* The checkmark is an SVG mask filled with currentColor, so it follows the
+   label colour through the fade. SF Symbols cannot be used in web content
+   shared with Chrome and Firefox; this draws the same rounded-stroke shape. */
+button.saved::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
+  vertical-align: -1px;
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3.2 3.2L13 4.5' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3.2 3.2L13 4.5' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* One pulse: a slight scale-up in green, a hold, then a fade to the button's
+   normal colours. 1.6s must match SAVED_FEEDBACK_MS in popup.js. */
+@keyframes saved-pulse {
+  0%   { transform: scale(1); }
+  12%  { transform: scale(1.04); }
+  25%  { transform: scale(1); }
+  70%  { color: #ffffff; background: var(--saved); border-color: var(--saved); }
+  100% { color: var(--fg); background: transparent; border-color: var(--border); }
+}
+
+/* No scaling or fading for users who ask for less motion: the button simply
+   stays green with the checkmark until the timer removes the class. */
+@media (prefers-reduced-motion: reduce) {
+  button.saved,
+  button.saved:disabled,
+  button.saved:hover:not(:disabled) {
+    animation: none;
+  }
+}
+
+/* Extraction mode selector */
+.mode {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mode-label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.mode select {
+  flex: 1;
+  padding: 6px 8px;
+  font-size: 13px;
+  color: var(--fg);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Sync row */
+.sync {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sync-status {
+  font-size: 11px;
+  color: var(--muted);
+  padding-left: 23px;
+}
+
+.sync-status:empty { display: none; }
+.sync-status.error { color: var(--error); }
+button.sync-retry { align-self: flex-start; margin-left: 15px; }
+
+/* New-terms toggle */
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--fg);
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle input {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.status {
+  font-size: 12px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  background: var(--tile-bg);
+}
+
+.status.error  { color: var(--error); }
+.status.ok     { color: var(--success); }
+
+.stats {
+  display: flex;
+  gap: 8px;
+}
+
+.tile {
+  flex: 1;
+  background: var(--tile-bg);
+  padding: 8px 10px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tile-label {
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.tile-value {
+  font-size: 18px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.results {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-y: auto;
+  max-height: 280px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.results:empty { display: none; }
+
+.results .more {
+  padding: 6px 10px;
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.results li {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.results li:last-child { border-bottom: none; }
+
+.results .idx {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  min-width: 28px;
+  text-align: right;
+  font-size: 11px;
+}
+
+.results .word {
+  flex: 1;
+  font-size: 15px;
+  user-select: text;
+}
+
+.results .freq {
+  color: var(--muted);
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+  min-width: 28px;
+  text-align: right;
+}
+
+.results .len {
+  color: var(--muted);
+  font-size: 10px;
+  min-width: 48px;
+  text-align: right;
+}
+
+/* History footer */
+.history {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 4px;
+  border-top: 1px solid var(--border);
+}
+
+.history .known {
+  font-size: 11px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.history-actions {
+  display: flex;
+  gap: 4px;
+}
+
+button.link {
+  flex: 0 0 auto;
+  padding: 4px 8px;
+  font-size: 11px;
+  border: none;
+  background: transparent;
+  color: var(--accent);
+}
+
+/* Not redundant with the generic button:hover: this rule is more specific than
+   button:active, so a pressed link button keeps the hover tint instead of
+   switching to the pressed --border background. */
+button.link:hover:not(:disabled) {
+  background: var(--tile-bg);
+}
+
+button.link.danger {
+  color: var(--error);
+}
